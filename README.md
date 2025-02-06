@@ -1,4 +1,4 @@
 # newspaper_front
 
-Front du site newspaper avec systeme d'indscription basique et 1 ere modal utilisé.
+Front du site newspaper avec systeme d'indscription 
 hebergé chez vercel

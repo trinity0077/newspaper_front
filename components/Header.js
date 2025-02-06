@@ -22,6 +22,11 @@ function Header() {
 	const [signInUsername, setSignInUsername] = useState('');
 	const [signInPassword, setSignInPassword] = useState('');
 
+	const BACKEND_ADDRESS =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3000"
+      : "https://newspaper-back.vercel.app";
+	 
 	const handleCleanHidden = (data) => {
 		dispatch(cleanhiddenArticle(data))
 	}
@@ -31,7 +36,7 @@ function Header() {
 	}, []);
 
 	const handleRegister = () => {
-		fetch('https://newspaper-back.vercel.app/users/signup', {
+		fetch(`${BACKEND_ADDRESS}/users/signup`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username: signUpUsername, password: signUpPassword }),
@@ -48,7 +53,7 @@ function Header() {
 
 	const handleConnection = () => {
 
-		fetch('https://newspaper-back.vercel.app/users/signin', {
+		fetch(`${BACKEND_ADDRESS}/users/signin`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ username: signInUsername, password: signInPassword }),
