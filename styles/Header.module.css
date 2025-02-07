@@ -2,7 +2,10 @@
 	font-family: "Old London";
 	src: url("/fonts/OldLondon.ttf");
 }
-
+.logoutP {
+	font-size: 1rem;
+	margin: 0%;
+}
 .header {
 	border-bottom: 2px rgb(233, 190, 89) solid;
 	display: flex;
@@ -12,9 +15,10 @@
 }
 
 .title {
-	font-size: 44px;
+	font-size: 40px;
 	font-family: "Old London";
 	text-shadow: 1px 1px 0px #000;
+	text-align: center;
 }
 
 .logoContainer {
@@ -22,11 +26,11 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0px 30px 0px 30px;
+	padding: 0px 15px 0px 15px;
 }
 
 .linkContainer {
-	width: 500px;
+	/* width: 500px; */
 	margin-bottom: 15px;
 	display: flex;
 	justify-content: space-around;
@@ -52,7 +56,7 @@
 }
 
 .link {
-	width: 150px;
+	width: 100px;
 	cursor: pointer;
 	text-align: center;
 }
@@ -84,6 +88,7 @@
 
 .logoutSection {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
@@ -101,4 +106,42 @@
 
 .eye:hover{
 	opacity: 0.6;
+}
+.logoutButton{
+	
+padding: 0px;
+}
+.logoutButton:hover{
+	transition: transform 0.3s;
+	transform: scale(1.2);
+}
+@media (min-width: 450px) {
+	.logoutSection {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		gap: 0.3rem;
+	}
+	.logoutP {
+		font-size: 1.4rem;
+		margin: 0%;
+	}
+	.title {
+		font-size: 44px;
+
+	}
+	.logoContainer {
+		padding: 0px 30px 0px 30px;
+	}
+	.link {
+		width: 160px;
+	}
+	@media (min-width: 1000px) {
+
+		.title {
+			font-size: 55px;
+	
+		}
+	  }
 }

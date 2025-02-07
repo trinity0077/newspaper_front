@@ -46,14 +46,17 @@ function Article(props) {
 	return (
 		<div className={styles.articles}>
 			<div className={styles.articleHeader}>
-				<h3>{props.title}</h3>
+				<h3 className={styles.titleH3}> {props.title}</h3>
 				<FontAwesomeIcon onClick={() => handlehidden(props.title)} className={styles.eye} icon={faEyeSlash} /*style={{color: '#3749a4'}}*/ />
 				<FontAwesomeIcon onClick={() => handleBookmarkClick()} icon={faBookmark} style={iconStyle} className={styles.bookmarkIcon} />
 			</div>
 			<h4 style={{ textAlign: "right" }}>- {props.author}</h4>
 			<div className={styles.divider}></div>
 			<Image src={decodeURIComponent(props.urlToImage)} alt={props.title} width={600} height={314} />
-			<p>{props.description}</p>
+			<p className={styles.description}>{props.description}</p>
+				<a href={props.url} target="_blank" rel="noopener noreferrer" className={styles.articleLink}>
+		Vers l'article
+	  </a>
 		</div>
 	);
 }

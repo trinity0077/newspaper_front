@@ -41,6 +41,9 @@ function TopArticle(props) {
 				<FontAwesomeIcon onClick={() => handleBookmarkClick()} icon={faBookmark} style={iconStyle} className={styles.bookmarkIcon} />
 				<h4>{props.author}</h4>
 				<p>{props.description}</p>
+				<a href={props.url} target="_blank" rel="noopener noreferrer" className={styles.articleLink}>
+        Vers l'article
+      </a>
 			</div>
 		</div>
 	);

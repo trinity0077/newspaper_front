@@ -47,7 +47,10 @@ function Header() {
 					setSignUpUsername('');
 					setSignUpPassword('');
 					setIsModalVisible(false)
-				}
+				}else {
+					console.log(data.error);
+					
+				  }
 			});
 	};
 
@@ -101,8 +104,9 @@ function Header() {
 	if (user.token) {
 		userSection = (
 			<div className={styles.logoutSection}>
-				<p>Welcome {user.username} / </p>
-				<button onClick={() => handleLogout()}>Logout</button>
+				<p className={styles.logoutP} >Welcome</p>
+				<p className={styles.logoutP}>{user.username}  </p>
+				<button className={styles.logoutButton} onClick={() => handleLogout()}>Logout</button>
 				<FontAwesomeIcon onClick={() => handleCleanHidden([])} className={styles.eye} icon={faEye} /*style={{color: '#3749a4'}}*/ />
 			</div>
 		);
