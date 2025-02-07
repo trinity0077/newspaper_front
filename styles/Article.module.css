@@ -63,9 +63,10 @@
 	display: flex;
 	justify-content: center;
 	color: rgb(233, 190, 89);
+	text-shadow: 1px 1px 0px rgb(134, 131, 131);
 	text-decoration: none;
 	font-weight: bold;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 	transition: transform 0.3s;
   }
   

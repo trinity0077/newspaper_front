@@ -59,6 +59,7 @@
 	width: 100px;
 	cursor: pointer;
 	text-align: center;
+	
 }
 
 .link:hover {
@@ -113,7 +114,7 @@ padding: 0px;
 }
 .logoutButton:hover{
 	transition: transform 0.3s;
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 @media (min-width: 450px) {
 	.logoutSection {

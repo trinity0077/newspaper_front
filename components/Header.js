@@ -21,15 +21,20 @@ function Header() {
 	const [signUpPassword, setSignUpPassword] = useState('');
 	const [signInUsername, setSignInUsername] = useState('');
 	const [signInPassword, setSignInPassword] = useState('');
+	const [isHiddenEmpty, setIsHiddenEmpty] = useState(true);
 
 	const BACKEND_ADDRESS =
     window.location.hostname === "localhost"
       ? "http://localhost:3000"
       : "https://newspaper-back.vercel.app";
 	 
-	const handleCleanHidden = (data) => {
-		dispatch(cleanhiddenArticle(data))
+	const handleCleanHidden = () => {
+		dispatch(cleanhiddenArticle([]))
 	}
+	useEffect(() => {
+		setIsHiddenEmpty(hidden.length === 0); // true si vide, false sinon
+	}, [hidden]); 
+
 
 	useEffect(() => {
 		setDate(new Date());
@@ -107,8 +112,13 @@ function Header() {
 				<p className={styles.logoutP} >Welcome</p>
 				<p className={styles.logoutP}>{user.username}  </p>
 				<button className={styles.logoutButton} onClick={() => handleLogout()}>Logout</button>
-				<FontAwesomeIcon onClick={() => handleCleanHidden([])} className={styles.eye} icon={faEye} /*style={{color: '#3749a4'}}*/ />
-			</div>
+				{!isHiddenEmpty && (
+					<FontAwesomeIcon
+						onClick={handleCleanHidden}
+						className={styles.eye}
+						icon={faEye}
+					/>
+				)}			</div>
 		);
 		
 	} else {

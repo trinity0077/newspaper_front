@@ -51,6 +51,7 @@ button {
   color: rgb(242, 185, 54);
   background-color: transparent;
   border: none;
+  text-shadow: 1px 1px 0px rgb(134, 131, 131);
   cursor: pointer;
 }
 
