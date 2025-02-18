@@ -2,9 +2,11 @@
 @media (min-width: 451px) {
 	.articles {
 	  width: 400px;
-	  height: 415px;
+	  height: 420px;
 	  margin: 10px;
-	
+	  padding: 10px;
+	  border-radius: 10px;
+	  border: 1px solid rgb(233, 190, 89);
 	}
   }
   
@@ -14,7 +16,9 @@
 	  width: 250px;
 	  height: auto; /* Adaptation de la hauteur pour le contenu */
 	  margin: 10px auto; /* Centrage sur les petits écrans */
-
+      padding: 5px;
+	  border-radius: 10px;
+	  border: 1px solid rgb(233, 190, 89);
 	}
 	.titleH3 {
 		display: -webkit-box;
