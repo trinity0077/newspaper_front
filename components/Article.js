@@ -11,12 +11,17 @@ function Article(props) {
   const user = useSelector((state) => state.user.value);
   const hidden = useSelector((state) => state.hiddenArticles.value);
 
+  const BACKEND_ADDRESS =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://newspaper-back.vercel.app";
+
   const handleBookmarkClick = () => {
     if (!user.token) {
       return;
     }
 
-    fetch(`https://newspaper-back.vercel.app/users/canBookmark/${user.token}`)
+    fetch(`${BACKEND_ADDRESS}/users/canBookmark/${user.token}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.result && data.canBookmark) {
@@ -59,12 +64,14 @@ function Article(props) {
       </div>
       <h4 style={{ textAlign: "right" }}>- {props.author}</h4>
       <div className={styles.divider}></div>
+      <div className={styles.containerImage}>
       <Image
         src={decodeURIComponent(props.urlToImage)}
         alt={props.title}
         width={600}
         height={314}
       />
+      </div>
       <p className={styles.description}>{props.description}</p>
       <a
         href={props.url}
@@ -79,5 +86,3 @@ function Article(props) {
 }
 
 export default Article;
-// teste de replacement de <Image
-//   <Image src={props.urlToImage} alt={props.title} width={600} height={314} />

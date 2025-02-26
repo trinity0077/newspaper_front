@@ -8,12 +8,17 @@ function TopArticle(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
 
+  const BACKEND_ADDRESS =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://newspaper-back.vercel.app";
+
   const handleBookmarkClick = () => {
     if (!user.token) {
       return;
     }
 
-    fetch(`https://newspaper-back.vercel.app/users/canBookmark/${user.token}`)
+    fetch(`${BACKEND_ADDRESS}/users/canBookmark/${user.token}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.result && data.canBookmark) {
@@ -33,7 +38,9 @@ function TopArticle(props) {
 
   return (
     <div className={styles.topContainer}>
+      <div className={styles.containerImage}>
       <img src={props.urlToImage} className={styles.image} alt={props.title} />
+      </div>
       <div className={styles.topText}>
         <h2 className={styles.topTitle}>{props.title}</h2>
         <FontAwesomeIcon
